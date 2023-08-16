@@ -39,3 +39,23 @@ document.addEventListener('mouseover', function(e) {
         }
     }
 });
+
+// Function to apply blur effect
+function applyBlurEffect() {
+    let resources = document.querySelectorAll('.ResourceThumbnail, .ResourcePreview');
+    resources.forEach(resource => {
+        resource.style.filter = 'blur(5px)'; // Adjust the pixel value as needed
+    });
+}
+
+// Function to remove blur effect
+function removeBlurEffect() {
+    let resources = document.querySelectorAll('.ResourceThumbnail, .ResourcePreview');
+    resources.forEach(resource => {
+        resource.style.filter = 'none';
+    });
+}
+
+// Event listeners for window focus and blur
+window.addEventListener('blur', applyBlurEffect);
+window.addEventListener('focus', removeBlurEffect);
