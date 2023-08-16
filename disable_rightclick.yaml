@@ -1,5 +1,8 @@
-name: disable_rightclick
-description: A plugin that disables right-click on images.
-version: 1.0.0
-author: Danny Greer 
+name: Disable Right Click
+enabled: false
+author: Danny Greer
 contact: danny@greerso.com
+description: A plugin that adds a custom context menu for resources and provides additional right-click functionality.
+version: 1.0
+category: User Interface
+icon: fa-ban
