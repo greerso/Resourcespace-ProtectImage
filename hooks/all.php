@@ -1,10 +1,10 @@
 <?php
 
 function HookDisable_rightclickAllAdditionalheaderjs() {
-    global $baseurl;
+    global $baseurl_short;
     $plugin_directory_name = basename(__DIR__);
-    return '<script src="' . $baseurl . '/plugins/' . $plugin_directory_name . '/libs/ProtectImage.js/ProtectImage.js"></script>'
-         . '<script src="' . $baseurl . '/plugins/' . $plugin_directory_name . '/js/context_menu.js"></script>';
+    echo '<script src="' . $baseurl_short . 'plugins/' . $plugin_directory_name . '/libs/ProtectImage.js/src/ProtectImage.min.js"></script>';
+    echo '<script src="' . $baseurl_short . 'plugins/' . $plugin_directory_name . '/js/context_menu.js"></script>';
 }
 
 function HookDisable_rightclickRender_actions_add_collection() {
