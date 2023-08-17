@@ -1,21 +1,15 @@
+// Prevent the default right-click menu on the entire page
 document.addEventListener('contextmenu', function(e) {
-    if (e.target.classList.contains('ResourceThumbnail') || e.target.classList.contains('ResourcePreview')) {
-        e.preventDefault();
-        
-        // Hide any existing context menus
-        document.querySelectorAll('.custom-context-menu').forEach(menu => {
-            menu.style.display = 'none';
-        });
-        
-        // Display the context menu
-        let contextMenu = document.querySelector('.custom-context-menu');
-        if (contextMenu) {
-            contextMenu.style.left = `${e.pageX}px`;
-            contextMenu.style.top = `${e.pageY}px`;
-            contextMenu.style.display = 'block';
-        }
+    e.preventDefault();
+    
+    // Display the custom context menu
+    let customMenu = document.querySelector('.custom-context-menu');
+    if (customMenu) {
+        customMenu.style.display = 'block';
+        customMenu.style.top = e.clientY + 'px';
+        customMenu.style.left = e.clientX + 'px';
     }
-});
+}, false);
 
 document.addEventListener('click', function(e) {
     // Hide context menus on any click
@@ -59,3 +53,7 @@ function removeBlurEffect() {
 // Event listeners for window focus and blur
 window.addEventListener('blur', applyBlurEffect);
 window.addEventListener('focus', removeBlurEffect);
+
+ProtectImage({
+    protect: "all"
+});
