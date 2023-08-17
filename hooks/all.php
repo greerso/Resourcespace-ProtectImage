@@ -2,8 +2,9 @@
 
 function HookDisable_rightclickAllAdditionalheaderjs() {
     global $baseurl;
-    echo '<script src="' . $baseurl . '/plugins/disable_rightclick/libs/ProtectImage.js"></script>';
-    echo '<script src="' . $baseurl . '/plugins/disable_rightclick/js/context_menu.js"></script>';
+    $plugin_directory_name = basename(__DIR__);
+    return '<script src="' . $baseurl . '/plugins/' . $plugin_directory_name . '/libs/ProtectImage.js/ProtectImage.js"></script>'
+         . '<script src="' . $baseurl . '/plugins/' . $plugin_directory_name . '/js/context_menu.js"></script>';
 }
 
 function HookDisable_rightclickRender_actions_add_collection() {
