@@ -1,0 +1,3 @@
+[submodule "libs/ProtectImage.js"]
+	path = libs/ProtectImage.js
+	url = https://github.com/ColonelParrot/ProtectImage.js
