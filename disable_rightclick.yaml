@@ -1,7 +1,0 @@
-name: disable_rightclick
-title: Disable Right Click
-author: Danny Greer
-version: 1.0
-desc: A plugin that adds a custom context menu for resources and provides additional right-click functionality.
-icon: fa fa-ban
-category: User Interface
