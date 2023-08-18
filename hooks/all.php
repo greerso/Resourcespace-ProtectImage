@@ -17,12 +17,14 @@ function HookDisable_rightclickAllAdditionalheaderjs() {
 }
 
 function HookDisable_rightclickAllPreheaderoutput(){
-    global $baseurl_short;
-    
-    // Add the <noscript> tag to redirect users to a logout or error page when JavaScript is disabled
-    echo '<noscript>
-        <meta http-equiv="refresh" content="0;url=' . $baseurl_short . '/plugins/disable_rightclick/pages/js_disabled.php">
-    </noscript>';
+    global $baseurl, $pagename;
+
+    // Only add the noscript tag if we're not on the login page
+    if ($pagename !== 'login') {
+        echo '<noscript>
+            <meta http-equiv="refresh" content="0;url=' . $baseurl . '/plugins/disable_rightclick/pages/js_disabled.php">
+        </noscript>';
+    }
 }
 
 function HookDisable_rightclickRender_actions_add_collection() {
