@@ -7,7 +7,7 @@ function HookDisable_rightclickAllAdditionalheaderjs() {
     // Initialization script for ProtectImage.js
     echo '<script>
     window.addEventListener("load", function() {
-        ProtectImageJS.protect(document.querySelectorAll("img"));
+        ProtectImageJS.protect(document.querySelectorAll("img:not(#UserProfileImage)"));
     });
     
     </script>';
@@ -16,7 +16,7 @@ function HookDisable_rightclickAllAdditionalheaderjs() {
     // echo '<script src="' . $baseurl_short . 'plugins/disable_rightclick/js/context_menu.js"></script>';
 }
 
-function HookDisable_rightclickAllPreheaderoutput(){
+function HookDisable_rightclickAllHeadblock(){
     global $baseurl, $pagename;
 
     // Only add the noscript tag if we're not on the login page
