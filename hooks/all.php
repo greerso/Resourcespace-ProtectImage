@@ -3,17 +3,8 @@
 function HookDisable_rightclickAllAdditionalheaderjs() {
     global $baseurl_short;
     echo '<script src="' . $baseurl_short . 'plugins/disable_rightclick/libs/ProtectImage.js/src/ProtectImage.min.js"></script>';
-    
-    // Initialization script for ProtectImage.js
-    echo '<script>
-    window.addEventListener("load", function() {
-        ProtectImageJS.protect(document.querySelectorAll("img:not(#UserProfileImage)"));
-    });
-    
-    </script>';
-    
-    // Commenting out the inclusion of context_menu.js for now
-    // echo '<script src="' . $baseurl_short . 'plugins/disable_rightclick/js/context_menu.js"></script>';
+    // Initialization script for ProtectImage.js;
+    echo '<script src="' . $baseurl_short . 'plugins/disable_rightclick/js/ProtectImageInit.js"></script>';
 }
 
 function HookDisable_rightclickAllHeadblock(){
