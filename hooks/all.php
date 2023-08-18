@@ -2,9 +2,27 @@
 
 function HookDisable_rightclickAllAdditionalheaderjs() {
     global $baseurl_short;
-    $plugin_directory_name = basename(__DIR__);
-    echo '<script src="' . $baseurl_short . 'plugins/' . $plugin_directory_name . '/libs/ProtectImage.js/src/ProtectImage.min.js"></script>';
-    echo '<script src="' . $baseurl_short . 'plugins/' . $plugin_directory_name . '/js/context_menu.js"></script>';
+    echo '<script src="' . $baseurl_short . 'plugins/disable_rightclick/libs/ProtectImage.js/src/ProtectImage.min.js"></script>';
+    
+    // Initialization script for ProtectImage.js
+    echo '<script>
+    window.addEventListener("load", function() {
+        ProtectImageJS.protect(document.querySelectorAll("img"));
+    });
+    
+    </script>';
+    
+    // Commenting out the inclusion of context_menu.js for now
+    // echo '<script src="' . $baseurl_short . 'plugins/disable_rightclick/js/context_menu.js"></script>';
+}
+
+function HookDisable_rightclickAllPreheaderoutput(){
+    global $baseurl_short;
+    
+    // Add the <noscript> tag to redirect users to a logout or error page when JavaScript is disabled
+    echo '<noscript>
+        <meta http-equiv="refresh" content="0;url=' . $baseurl_short . '/plugins/disable_rightclick/pages/js_disabled.php">
+    </noscript>';
 }
 
 function HookDisable_rightclickRender_actions_add_collection() {
