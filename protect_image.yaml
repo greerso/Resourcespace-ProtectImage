@@ -5,3 +5,4 @@ version: 1.1
 desc: Enhances protection of image resources using the ProtectImage.js project that prevents right-click downloads.
 icon: fa fa-ban
 category: User Interface
+info_url: http://www.resourcespace.com/knowledge-base/user/plugin-antivirus
